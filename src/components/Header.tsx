@@ -123,7 +123,21 @@ export default function Header() {
           </nav>
 
           {/* CTA + Hamburger */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 lg:gap-4">
+            <a
+              href={SITE.phoneHref}
+              className={`hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-semibold tracking-[0.06em] transition-all duration-300 border ${
+                isScrolled
+                  ? "border-charcoal/20 text-charcoal hover:bg-charcoal/5 hover:border-charcoal/40"
+                  : "border-ivory/20 text-ivory hover:bg-ivory/10 hover:border-ivory/40"
+              }`}
+            >
+              <svg className="w-3.5 h-3.5 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.48-4.18-7.076-7.076l1.293-.97c.362-.271.527-.733.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+              {SITE.phone}
+            </a>
+
             <a
               href={SITE.bookingUrl}
               target="_blank"
