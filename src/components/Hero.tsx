@@ -16,7 +16,11 @@ export default function Hero() {
         {/* Top spacing to clear fixed header + top bar */}
         <div className="pt-32 lg:pt-40" />
 
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-10 pb-16 lg:pb-28">
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-4 xl:gap-0 pb-16 lg:pb-28 relative">
+          {/* Unifying center glow/haze to visually connect text to images */}
+          <div className="hidden lg:block absolute top-[40%] left-[45%] w-[40%] h-[60%] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(235,115,33,0.06),transparent_60%)] blur-[80px] -z-10 pointer-events-none" />
+          <div className="hidden lg:block absolute top-[50%] left-[50%] w-[30%] h-[50%] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.02),transparent_60%)] blur-[60px] -z-10 pointer-events-none" />
+
           {/* Text Content — left side */}
           <div className="w-full lg:w-5/12 z-10 lg:pr-6 xl:pr-10">
             <AnimateOnScroll>
@@ -82,12 +86,12 @@ export default function Hero() {
             <AnimateOnScroll delay={100}>
               <div className="relative w-full max-w-[32rem] lg:max-w-none mx-auto aspect-[4/5] sm:aspect-square lg:aspect-[6/5] flex items-center justify-center lg:justify-end">
                 
-                {/* Soft Ambient Glow (Replacing bulky dark panel) */}
-                <div className="absolute top-1/2 left-[50%] lg:left-[60%] -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-sage-light/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
+                {/* Soft Ambient Glow */}
+                <div className="absolute top-1/2 left-[50%] lg:left-[45%] -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-sage-light/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
                 <div className="absolute top-1/2 left-[50%] -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-navy-light/10 rounded-full blur-[120px] -z-10 pointer-events-none" />
 
                 {/* Primary dominant image */}
-                <div className="relative w-[85%] sm:w-[75%] lg:w-[68%] aspect-[3/4] rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] z-20 translate-x-4 lg:translate-x-6">
+                <div className="relative w-[85%] sm:w-[75%] lg:w-[75%] xl:w-[78%] aspect-[3/4] rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] z-20 translate-x-4 lg:translate-x-0">
                   <Image
                     src={CLIENT_IMAGES[1].src}
                     alt={CLIENT_IMAGES[1].alt}
@@ -101,7 +105,7 @@ export default function Hero() {
                 </div>
                 
                 {/* Secondary tucked/overlapping accent image */}
-                <div className="absolute bottom-[-10%] lg:bottom-[-12%] left-[-5%] lg:left-[-4%] w-[42%] sm:w-[38%] lg:w-[35%] aspect-[5/6] rounded-[1.5rem] lg:rounded-[2rem] shadow-[0_20px_50px_-10px_rgba(0,0,0,0.9)] z-30 transform hover:-translate-y-2 transition-transform duration-700 bg-charcoal/40 p-1 md:p-1.5 border-[0.5px] border-ivory/20 backdrop-blur-sm">
+                <div className="absolute bottom-[-10%] lg:bottom-[-5%] xl:bottom-[-2%] left-[-5%] lg:left-[8%] xl:left-[10%] w-[42%] sm:w-[38%] lg:w-[38%] xl:w-[40%] aspect-[5/6] rounded-[1.5rem] lg:rounded-[2rem] shadow-[0_20px_50px_-10px_rgba(0,0,0,0.9)] z-30 transform hover:-translate-y-2 transition-transform duration-700 bg-charcoal/40 p-1 md:p-1.5 border-[0.5px] border-ivory/20 backdrop-blur-sm">
                   <div className="relative w-full h-full rounded-[1.25rem] lg:rounded-[1.75rem] overflow-hidden">
                     <Image
                       src={CLIENT_IMAGES[5].src}
@@ -115,7 +119,7 @@ export default function Hero() {
                 </div>
 
                 {/* Micro / Luxury Details (Badge) */}
-                <div className="absolute top-[18%] lg:top-[20%] right-[-5%] sm:right-[-2%] lg:right-[0%] z-40 bg-charcoal/90 backdrop-blur-xl border border-ivory/15 rounded-full px-5 py-2.5 shadow-2xl hidden sm:flex items-center gap-2 transform hover:scale-105 transition-transform duration-500">
+                <div className="absolute top-[18%] lg:top-[20%] right-[-5%] sm:right-[-2%] lg:right-[-4%] z-40 bg-charcoal/90 backdrop-blur-xl border border-ivory/15 rounded-full px-5 py-2.5 shadow-2xl hidden sm:flex items-center gap-2 transform hover:scale-105 transition-transform duration-500">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sage opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-sage"></span>
