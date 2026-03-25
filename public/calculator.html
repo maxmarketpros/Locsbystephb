@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loc Calculator</title>
+    
+    <!-- 1. Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 2. Include Tailwind CSS and Custom Colors -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#D9481C',
+                            darkGrey: '#2E2E2E',
+                            pink: '#E63973',
+                            green: '#62C370'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- 3. Fixed Opening Style Tag -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2E2E2E 0%, #3a3a3a 100%);
+            min-height: 100vh;
+            color: #2E2E2E;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .calculator-container {
+            background-color: #FFFFFF;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .result-box {
+            background: linear-gradient(135deg, #D9481C 0%, #c13d16 100%);
+        }
+        
+        input[type="radio"] + label span {
+            transition: all 0.2s ease;
+        }
+        
+        input[type="radio"]:checked + label span {
+            background-color: #E63973;
+            box-shadow: 0 0 0 2px white inset;
+        }
+        
+        input[type="checkbox"] + label span {
+            transition: all 0.2s ease;
+        }
+        
+        input[type="checkbox"]:checked + label span {
+            background-color: #E63973;
+            box-shadow: 0 0 0 2px white inset;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #E63973 0%, #d32e63 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(230, 57, 115, 0.3);
+        }
+        
+        .method-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .method-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .method-card.selected {
+            border-color: #E63973;
+            background-color: #fff9fa;
+        }
+        
+        .info-tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .info-tooltip .tooltip-text {
+            visibility: hidden;
+            width: 280px;
+            background-color: #2E2E2E;
+            color: #FFFFFF;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .info-tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            background-image: linear-gradient(#62C370, #62C370);
+            background-repeat: no-repeat;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #62C370;
+            cursor: pointer;
+            box-shadow: 0 0 2px 0 #555;
+        }
+        
+        input[type="range"]::-webkit-slider-runnable-track {
+            -webkit-appearance: none;
+            appearance: none;
+            box-shadow: none;
+            border: none;
+            background: transparent;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .section-title::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 25px;
+            background-color: #D9481C;
+            border-radius: 3px;
+        }
+        
+        .texture-card {
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+        
+        .texture-card.selected {
+            border-color: #E63973;
+            background-color: #fff9fa;
+        }
+        
+        .method-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #62C370;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+        
+        .method-badge.caution {
+            background-color: #F9A826;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 4. Added wrapper container to fix the HTML layout -->
+<div class="calculator-container max-w-4xl mx-auto rounded-xl p-6 md:p-10 my-8">
+
+    <div class="bg-amber-50 border-l-4 border-brand-orange p-4 mb-6 rounded">
+        <p class="text-brand-darkGrey text-sm">
+            <strong>Note:</strong> This calculator provides an estimate only. Final pricing may vary based on confirmed hair density, head circumference, scalp condition, and consultation assessment.
+        </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+            <div class="mb-6">
+                <h2 class="section-title text-xl font-semibold mb-3 text-brand-darkGrey">1. Select Loc Type</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="method-card p-4 rounded-lg bg-white shadow-md cursor-pointer" data-type="sisterlocks">
+                        <h3 class="font-medium text-lg mb-1">Sisterlocks™</h3>
+                        <p class="text-sm text-gray-600">Interlocking method only</p>
+                    </div>
+                    <div class="method-card p-4 rounded-lg bg-white shadow-md cursor-pointer" data-type="microlocs">
+                        <h3 class="font-medium text-lg mb-1">Microlocs</h3>
+                        <p class="text-sm text-gray-600">Multiple starting methods</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="methodSelection" class="mb-6 hidden">
+                <h2 class="section-title text-xl font-semibold mb-3 text-brand-darkGrey">2. Select Starting Method</h2>
+                <div id="methodOptions" class="grid grid-cols-1 gap-3">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+                <div id="methodRecommendation" class="mt-3 text-sm text-gray-700 hidden p-3 bg-amber-50 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-1 text-amber-600" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9z" clip-rule="evenodd" />
+                    </svg>
+                    <strong>Note:</strong> Type 3 hair can use all methods but may require extra care with braided and two-strand twist methods as they're more prone to unraveling. Interlocking provides the most secure start for all hair types.
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <h2 class="section-title text-xl font-semibold mb-3 text-brand-darkGrey">3. Hair Length</h2>
+                <div class="flex items-center">
+                    <input type="range" id="hairLength" min="1" max="10" value="4" class="w-full h-2 rounded-lg appearance-none cursor-pointer">
+                    <span id="lengthValue" class="ml-3 font-medium text-lg">4"</span>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <h2 class="section-title text-xl font-semibold mb-3 text-brand-darkGrey">4. Hair Density</h2>
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="flex items-center">
+                        <input type="radio" name="density" id="densityLow" value="low" class="hidden" checked>
+                        <label for="densityLow" class="flex items-center cursor-pointer">
+                            <span class="w-5 h-5 inline-block mr-2 rounded-full border border-gray-500 flex-shrink-0"></span>
+                            <span>Low</span>
+                        </label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" name="density" id="densityMedium" value="medium" class="hidden">
+                        <label for="densityMedium" class="flex items-center cursor-pointer">
+                            <span class="w-5 h-5 inline-block mr-2 rounded-full border border-gray-500 flex-shrink-0"></span>
+                            <span>Medium</span>
+                        </label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" name="density" id="densityHigh" value="high" class="hidden">
+                        <label for="densityHigh" class="flex items-center cursor-pointer">
+                            <span class="w-5 h-5 inline-block mr-2 rounded-full border border-gray-500 flex-shrink-0"></span>
+                            <span>High</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="mt-2 text-xs text-gray-500">
+                    <span class="info-tooltip">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block text-brand-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        What's my density?
+                        <span class="tooltip-text">
+                            Low: Can easily see scalp through hair<br>
+                            Medium: Scalp partially visible<br>
+                            High: Scalp difficult to see, very thick hair
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <div class="mb-6">
+                <h2 class="section-title text-xl font-semibold mb-3 text-brand-darkGrey">5. Hair Texture</h2>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="texture-card p-3 rounded-lg bg-white shadow-md cursor-pointer" data-texture-group="3">
+                        <h3 class="font-medium text-center mb-2">Type 3 Curly</h3>
+                        <div class="grid grid-cols-3 gap-1">
+                            <div class="texture-option p-2 border rounded-md text-center cursor-pointer" data-texture="3a">3A</div>
+                            <div class="texture-option p-2 border rounded-md text-center cursor-pointer" data-texture="3b">3B</div>
+                            <div class="texture-option p-2 border rounded-md text-center cursor-pointer" data-texture="3c">3C</div>
+                        </div>
+                        <p class="text-xs text-amber-600 mt-2 text-center">May need extra care</p>
+                    </div>
+                    <div class="texture-card p-3 rounded-lg bg-white shadow-md cursor-pointer" data-texture-group="4">
+                        <h3 class="font-medium text-center mb-2">Type 4 Coily</h3>
+                        <div class="grid grid-cols-3 gap-1">
+                            <div class="texture-option p-2 border rounded-md text-center cursor-pointer" data-texture="4a">4A</div>
+                            <div class="texture-option p-2 border rounded-md text-center cursor-pointer" data-texture="4b">4B</div>
+                            <div class="texture-option p-2 border rounded-md text-center cursor-pointer" data-texture="4c">4C</div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2 text-center">Works well</p>
+                    </div>
+                </div>
+                <input type="hidden" id="selectedTexture" value="">
+                <div class="mt-2 text-xs text-gray-500">
+                    <span class="info-tooltip">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block text-brand-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        What's my texture?
+                        <span class="tooltip-text">
+                            3A-3C: Curly patterns, ranging from loose to tight curls<br>
+                            4A-4C: Coily/kinky patterns, ranging from tight coils to z-shaped coils
+                        </span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <h2 class="section-title text-xl font-semibold mb-3 text-brand-darkGrey">6. Head Circumference</h2>
+                <div class="flex items-center">
+                    <input type="range" id="circumference" min="18" max="26" value="21" class="w-full h-2 rounded-lg appearance-none cursor-pointer">
+                    <span id="circumferenceValue" class="ml-3 font-medium text-lg">21"</span>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <h2 class="section-title text-xl font-semibold mb-3 text-brand-darkGrey">7. Additional Factors</h2>
+                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                    <input type="checkbox" id="greyHair" class="hidden">
+                    <label for="greyHair" class="flex items-center cursor-pointer">
+                        <span class="w-5 h-5 inline-block mr-2 rounded border border-gray-500 flex-shrink-0"></span>
+                        <span>Grey Hair (Additional $200)</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="mt-8">
+                <button id="calculateBtn" class="btn-primary w-full py-3 px-6 text-white font-medium rounded-lg text-lg shadow-lg">Calculate Rate</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="resultSection" class="mt-8 hidden">
+        <div class="result-box text-white p-6 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Your Estimated Rate</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-medium mb-2">Service Details:</h3>
+                    <ul class="space-y-2 text-gray-100">
+                        <li id="resultLocType"></li>
+                        <li id="resultMethod"></li>
+                        <li id="resultLength"></li>
+                        <li id="resultDensity"></li>
+                        <li id="resultTexture"></li>
+                        <li id="resultCircumference"></li>
+                        <li id="resultGreyHair" class="hidden"></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col justify-center items-center bg-white/10 p-4 rounded-lg">
+                    <div class="text-4xl font-bold mb-2">$<span id="totalRate">0</span></div>
+                    <p class="text-sm text-gray-200">Estimated total</p>
+                </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/20">
+                <p class="text-sm">This is an estimated rate. Final pricing may vary based on consultation, confirmed hair density, head circumference, and scalp condition assessment.</p>
+            </div>
+        </div>
+        
+        <div class="mt-6 p-4 bg-brand-darkGrey/5 rounded-lg">
+            <h3 class="font-medium text-lg mb-2 text-brand-darkGrey">Method Recommendations</h3>
+            <div id="recommendationText" class="text-sm text-gray-700">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+        
+        <div class="mt-6 p-4 bg-brand-orange/10 rounded-lg">
+            <h3 class="font-medium text-lg mb-2 text-brand-darkGrey">Maintenance Guide</h3>
+            <div id="maintenanceGuide" class="text-sm text-gray-700">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Elements
+        const methodSelection = document.getElementById('methodSelection');
+        const methodOptions = document.getElementById('methodOptions');
+        const methodRecommendation = document.getElementById('methodRecommendation');
+        const locTypeCards = document.querySelectorAll('.method-card');
+        const hairLengthSlider = document.getElementById('hairLength');
+        const lengthValue = document.getElementById('lengthValue');
+        const circumferenceSlider = document.getElementById('circumference');
+        const circumferenceValue = document.getElementById('circumferenceValue');
+        const textureOptions = document.querySelectorAll('.texture-option');
+        const selectedTextureInput = document.getElementById('selectedTexture');
+        const calculateBtn = document.getElementById('calculateBtn');
+        const resultSection = document.getElementById('resultSection');
+        const greyHairCheckbox = document.getElementById('greyHair');
+        const recommendationText = document.getElementById('recommendationText');
+        const maintenanceGuide = document.getElementById('maintenanceGuide');
+        
+        // Variables to store selections
+        let selectedLocType = '';
+        let selectedMethod = '';
+        
+        // Method options for each loc type
+        const methodsData = {
+            sisterlocks: [
+                { id: 'sl-interlock', name: 'Interlocking', description: 'Traditional Sisterlocks™ method', recommended: true }
+            ],
+            microlocs: [
+                { id: 'ml-interlock', name: 'Interlocking', description: 'Root to tip interlocking', recommended: true },
+                { id: 'ml-braid', name: 'Braided Method', description: 'Braided with interlocked root', recommended: false, caution: true },
+                { id: 'ml-twist', name: 'Two-Strand Twist', description: 'Two-strand twist with interlocked root', recommended: false, caution: true }
+            ]
+        };
+        
+        // Initialize range sliders
+        function initRangeSliders() {
+            const hairLengthInput = document.getElementById('hairLength');
+            const circumferenceInput = document.getElementById('circumference');
+            
+            function updateRangeColor(input) {
+                const value = ((input.value - input.min) / (input.max - input.min)) * 100;
+                input.style.backgroundImage = `linear-gradient(to right, #62C370 0%, #62C370 ${value}%, #e0e0e0 ${value}%, #e0e0e0 100%)`;
+            }
+            
+            updateRangeColor(hairLengthInput);
+            updateRangeColor(circumferenceInput);
+            
+            hairLengthInput.addEventListener('input', function() {
+                updateRangeColor(this);
+                lengthValue.textContent = this.value + '"';
+            });
+            
+            circumferenceInput.addEventListener('input', function() {
+                updateRangeColor(this);
+                circumferenceValue.textContent = this.value + '"';
+            });
+        }
+        
+        initRangeSliders();
+        
+        // Handle loc type selection
+        locTypeCards.forEach(card => {
+            card.addEventListener('click', function() {
+                // Reset previous selection
+                locTypeCards.forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                // Store selected type
+                selectedLocType = this.dataset.type;
+                selectedMethod = '';
+                
+                // Show method selection and populate options
+                methodSelection.classList.remove('hidden');
+                populateMethodOptions(selectedLocType);
+                
+                // Show recommendation for microlocs
+                if (selectedLocType === 'microlocs') {
+                    methodRecommendation.classList.remove('hidden');
+                } else {
+                    methodRecommendation.classList.add('hidden');
+                }
+                
+                // Update hair length slider based on loc type
+                if (selectedLocType === 'sisterlocks') {
+                    hairLengthSlider.value = 4;
+                    lengthValue.textContent = "4\"";
+                } else {
+                    hairLengthSlider.value = 6;
+                    lengthValue.textContent = "6\"";
+                }
+                
+                // Update range slider color
+                const value = ((hairLengthSlider.value - hairLengthSlider.min) / (hairLengthSlider.max - hairLengthSlider.min)) * 100;
+                hairLengthSlider.style.backgroundImage = `linear-gradient(to right, #62C370 0%, #62C370 ${value}%, #e0e0e0 ${value}%, #e0e0e0 100%)`;
+            });
+        });
+        
+        // Handle texture selection
+        textureOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Reset previous selection
+                textureOptions.forEach(opt => opt.classList.remove('bg-brand-pink', 'text-white'));
+                this.classList.add('bg-brand-pink', 'text-white');
+                
+                // Store selected texture
+                selectedTextureInput.value = this.dataset.texture;
+                
+                // Check if selected method is compatible with hair texture
+                if (selectedMethod) {
+                    checkMethodCompatibility();
+                }
+            });
+        });
+        
+        // Populate method options based on selected loc type
+        function populateMethodOptions(locType) {
+            methodOptions.innerHTML = '';
+            
+            methodsData[locType].forEach(method => {
+                const methodCard = document.createElement('div');
+                methodCard.className = 'p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 method-option relative';
+                methodCard.dataset.methodId = method.id;
+                
+                // Add badge
+                let badgeClass = method.recommended ? 'method-badge' : 'method-badge caution';
+                let badgeText = method.recommended ? 'Recommended' : 'Use with caution';
+                
+                methodCard.innerHTML = `
+                    <div class="${badgeClass}">${badgeText}</div>
+                    <div class="flex items-center">
+                        <div class="w-5 h-5 rounded-full border-2 border-gray-400 mr-3 flex-shrink-0 method-radio"></div>
+                        <div>
+                            <h4 class="font-medium">${method.name}</h4>
+                            <p class="text-sm text-gray-600">${method.description}</p>
+                        </div>
+                    </div>
+                `;
+                
+                methodOptions.appendChild(methodCard);
+                
+                methodCard.addEventListener('click', function() {
+                    // Reset previous selection
+                    document.querySelectorAll('.method-option').forEach(option => {
+                        option.classList.remove('bg-gray-100');
+                        option.querySelector('.method-radio').classList.remove('bg-brand-pink');
+                    });
+                    
+                    // Mark as selected
+                    this.classList.add('bg-gray-100');
+                    this.querySelector('.method-radio').classList.add('bg-brand-pink');
+                    
+                    // Store selected method
+                    selectedMethod = this.dataset.methodId;
+                    
+                    // Check if selected method is compatible with hair texture
+                    checkMethodCompatibility();
+                });
+            });
+        }
+        
+        // Check if selected method is compatible with hair texture
+        function checkMethodCompatibility() {
+            const texture = selectedTextureInput.value;
+            if ((selectedMethod === 'ml-braid' || selectedMethod === 'ml-twist') && 
+                texture && ['3a', '3b', '3c'].includes(texture)) {
+                showCautionNote();
+            } else {
+                hideCautionNote();
+            }
+        }
+        
+        // Show caution note for Type 3 hair with certain methods
+        function showCautionNote() {
+            // Check if note already exists
+            if (!document.getElementById('compatibilityCaution')) {
+                const caution = document.createElement('div');
+                caution.id = 'compatibilityCaution';
+                caution.className = 'mt-3 p-3 bg-amber-50 border-l-4 border-amber-500 text-brand-darkGrey text-sm rounded-r';
+                caution.innerHTML = `
+                    <strong class="text-amber-600">Note:</strong> Type 3 hair may require extra care with this method. 
+                    Consider using braid and band maintenance in the early stages to prevent unraveling.
+                `;
+                methodSelection.appendChild(caution);
+            }
+        }
+        
+        // Hide caution note
+        function hideCautionNote() {
+            const caution = document.getElementById('compatibilityCaution');
+            if (caution) {
+                caution.remove();
+            }
+        }
+        
+        // Handle radio buttons for density
+        document.querySelectorAll('input[name="density"]').forEach(input => {
+            input.addEventListener('change', function() {
+                document.querySelectorAll('input[name="density"] + label span').forEach(span => {
+                    span.classList.remove('bg-brand-pink');
+                });
+                
+                if (this.checked) {
+                    const span = document.querySelector(`label[for="${this.id}"] span`);
+                    span.classList.add('bg-brand-pink');
+                }
+            });
+        });
+        
+        // Handle checkbox for grey hair
+        greyHairCheckbox.addEventListener('change', function() {
+            const span = document.querySelector('label[for="greyHair"] span:first-child');
+            if (this.checked) {
+                span.classList.add('bg-brand-pink');
+            } else {
+                span.classList.remove('bg-brand-pink');
+            }
+        });
+        
+        // Calculate button click handler
+        calculateBtn.addEventListener('click', function() {
+            if (!selectedLocType) {
+                alert('Please select a loc type');
+                return;
+            }
+            
+            if (!selectedMethod) {
+                alert('Please select a starting method');
+                return;
+            }
+            
+            if (!selectedTextureInput.value) {
+                alert('Please select a hair texture');
+                return;
+            }
+            
+            // Get all form values
+            const hairLength = parseInt(hairLengthSlider.value);
+            const density = document.querySelector('input[name="density"]:checked').value;
+            const hairTexture = selectedTextureInput.value;
+            const circumference = parseInt(circumferenceSlider.value);
+            const hasGreyHair = greyHairCheckbox.checked;
+            
+            // Calculate rate
+            const rate = calculateRate(selectedLocType, selectedMethod, hairLength, density, circumference, hasGreyHair);
+            
+            // Display results
+            document.getElementById('totalRate').textContent = rate;
+            document.getElementById('resultLocType').textContent = `Loc Type: ${selectedLocType === 'sisterlocks' ? 'Sisterlocks™' : 'Microlocs'}`;
+            
+            // Get method name
+            let methodName = '';
+            methodsData[selectedLocType].forEach(method => {
+                if (method.id === selectedMethod) {
+                    methodName = method.name;
+                }
+            });
+            
+            document.getElementById('resultMethod').textContent = `Method: ${methodName}`;
+            document.getElementById('resultLength').textContent = `Hair Length: ${hairLength}"`;
+            document.getElementById('resultDensity').textContent = `Density: ${density.charAt(0).toUpperCase() + density.slice(1)}`;
+            document.getElementById('resultTexture').textContent = `Hair Texture: ${hairTexture.toUpperCase()}`;
+            document.getElementById('resultCircumference').textContent = `Head Circumference: ${circumference}"`;
+            
+            // Show grey hair result if applicable
+            const resultGreyHair = document.getElementById('resultGreyHair');
+            if (hasGreyHair) {
+                resultGreyHair.textContent = 'Grey Hair: Yes (+$200)';
+                resultGreyHair.classList.remove('hidden');
+            } else {
+                resultGreyHair.classList.add('hidden');
+            }
+            
+            // Generate recommendations based on selections
+            generateRecommendations(hairTexture, selectedMethod);
+            
+            // Generate maintenance guide
+            generateMaintenanceGuide(hairTexture, selectedMethod, selectedLocType);
+            
+            // Show result section
+            resultSection.classList.remove('hidden');
+            
+            // Scroll to results
+            resultSection.scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Generate recommendations based on selections
+        function generateRecommendations(texture, method) {
+            let recommendations = '';
+            
+            // Texture-based recommendations
+            if (texture === '4c' && (method === 'ml-interlock' || method === 'sl-interlock')) {
+                recommendations += `<div class="p-3 bg-green-50 rounded-lg mb-3">
+                    <p class="mb-2"><strong class="text-brand-green">Excellent choice:</strong> Interlocking is very reliable for your Type 4C hair texture.</p>
+                    <p>Benefits for your hair type:</p>
+                    <ul class="list-disc pl-5">
+                        <li>Consistent results</li>
+                        <li>Predictable locking timeline</li>
+                        <li>Less maintenance in early stages</li>
+                    </ul>
+                </div>`;
+            } else if (texture.startsWith('3')) {
+                if (method === 'ml-braid' || method === 'ml-twist') {
+                    recommendations += `<div class="p-3 bg-amber-50 rounded-lg mb-3">
+                        <p class="mb-2"><strong class="text-amber-600">Tips for Type ${texture.toUpperCase()} hair with this method:</strong></p>
+                        <ul class="list-disc pl-5">
+                            <li>Use braid and band method consistently in early stages</li>
+                            <li>Be gentle when washing in the first 2-3 months</li>
+                            <li>Consider more frequent maintenance initially</li>
+                            <li>Be patient with the locking process - it may take longer</li>
+                        </ul>
+                    </div>`;
+                } else {
+                    recommendations += `<div class="p-3 bg-green-50 rounded-lg mb-3">
+                        <p class="mb-2"><strong class="text-brand-green">Great choice:</strong> Interlocking provides excellent stability for your Type ${texture.toUpperCase()} hair texture.</p>
+                        <p>Benefits for your hair type:</p>
+                        <ul class="list-disc pl-5">
+                            <li>Better retention from the start</li>
+                            <li>Faster locking process</li>
+                            <li>Less maintenance in early stages</li>
+                        </ul>
+                    </div>`;
+                }
+            } else if (texture.startsWith('4') && texture !== '4c') {
+                if (method === 'ml-braid' || method === 'ml-twist') {
+                    recommendations += `<div class="p-3 bg-green-50 rounded-lg mb-3">
+                        <p class="mb-2"><strong class="text-brand-green">Good option:</strong> Type ${texture.toUpperCase()} hair works well with this method.</p>
+                        <p>For best results:</p>
+                        <ul class="list-disc pl-5">
+                            <li>Use braid and band method during the first 2-3 months</li>
+                            <li>Be consistent with maintenance</li>
+                            <li>Allow proper drying time after washing</li>
+                        </ul>
+                    </div>`;
+                } else {
+                    recommendations += `<div class="p-3 bg-green-50 rounded-lg mb-3">
+                        <p class="mb-2"><strong class="text-brand-green">Excellent choice:</strong> Interlocking is very reliable for your Type ${texture.toUpperCase()} hair texture.</p>
+                        <p>Benefits for your hair type:</p>
+                        <ul class="list-disc pl-5">
+                            <li>Consistent results</li>
+                            <li>Predictable locking timeline</li>
+                            <li>Less maintenance in early stages</li>
+                        </ul>
+                    </div>`;
+                }
+            }
+            
+            recommendationText.innerHTML = recommendations;
+        }
+        
+        // Generate maintenance guide
+        function generateMaintenanceGuide(texture, method, locType) {
+            let guide = '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
+            
+            // First column - Early Stage Care
+            guide += `
+                <div>
+                    <h4 class="font-medium text-brand-orange mb-2">Early Stage Care (1-6 months)</h4>
+                    <ul class="list-disc pl-5 space-y-1">
+            `;
+            
+            if (texture === '4c') {
+                guide += `
+                    <li>Wait 2 weeks before first wash</li>
+                    <li>Braid and Band Your Hair to maintain loc integrity</li>
+                    <li>Gentle cleansing with clarifying shampoo</li>
+                    <li>Avoid heavy products that cause buildup (no oils or creams)</li>
+                `;
+            } else if (locType === 'microlocs') {
+                // Updated microlocs maintenance guide
+                guide += `
+                    <li>Use braid and band method consistently</li>
+                    <li>Avoid getting locs wet for first 2 weeks</li>
+                    <li>Gentle cleansing with clarifying shampoo</li>
+                    <li>Take extra care when washing and styling</li>
+                    <li>Consider more frequent maintenance initially</li>
+                `;
+            } else {
+                guide += `
+                    <li>Wait 2-3 weeks before first wash</li>
+                    <li>Use a stocking cap when washing initially</li>
+                    <li>Gentle cleansing with diluted shampoo</li>
+                    <li>Avoid heavy products that cause buildup</li>
+                `;
+            }
+            
+            guide += `
+                    </ul>
+                </div>
+            `;
+            
+            // Second column - Long-term Maintenance
+            guide += `
+                <div>
+                    <h4 class="font-medium text-brand-green mb-2">Long-term Maintenance</h4>
+                    <ul class="list-disc pl-5 space-y-1">
+            `;
+            
+            if (texture === '4c') {
+                guide += `
+                    <li>Regular retightening every 5-8 weeks</li>
+                    <li>Avoid heavy oils and butters</li>
+                    <li>Sleep with a satin bonnet and or pillowcase</li>
+                    <li>Keep scalp clean between washing with witch hazel or sea breeze</li>
+                `;
+            } else if (locType === 'microlocs') {
+                // Updated microlocs long-term maintenance
+                guide += `
+                    <li>Regular retightening every 4-8 weeks</li>
+                    <li>Use residue-free shampoo</li>
+                    <li>Avoid heavy oils and butters</li>
+                    <li>Sleep with a satin bonnet and or pillowcase</li>
+                    <li>Keep scalp clean in between washing with witch hazel or sea breeze</li>
+                    <li>Be gentle when styling to prevent breakage</li>
+                `;
+            } else {
+                guide += `
+                    <li>Regular retightening every 8-12 weeks</li>
+                    <li>Use residue-free shampoo</li>
+                    <li>Avoid heavy oils and butters</li>
+                    <li>Sleep with a satin bonnet or pillowcase</li>
+                    <li>Keep scalp clean and moisturized</li>
+                `;
+            }
+            
+            guide += `
+                    </ul>
+                </div>
+            `;
+            
+            guide += '</div>';
+            
+            // Products to avoid
+            guide += `
+                <div class="mt-4">
+                    <h4 class="font-medium text-brand-pink mb-2">Products to Avoid</h4>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Beeswax and petroleum-based products</li>
+                        <li>Heavy butters and oils</li>
+                        <li>Products with silicones</li>
+                        <li>Conditioners that leave residue</li>
+                    </ul>
+                </div>
+            `;
+            
+            maintenanceGuide.innerHTML = guide;
+        }
+        
+        // Calculate rate based on selections
+        function calculateRate(locType, method, length, density, circumference, hasGreyHair) {
+            let baseRate = 0;
+            let baseLength = 0;
+            let additionalLengthCost = 0;
+            let densityCost = 0;
+            let circumferenceCost = 0;
+            let greyHairCost = hasGreyHair ? 200 : 0;
+            
+            // Base rate and length calculation
+            if (locType === 'sisterlocks') {
+                baseRate = 1800; // Updated Sisterlocks base rate
+                baseLength = 4;
+            } else { // microlocs
+                if (method === 'ml-interlock') {
+                    baseRate = 1800; // Same as Sisterlocks for interlocked microlocs
+                    baseLength = 4;
+                } else { // braided or twist
+                    baseRate = 950;
+                    baseLength = 6;
+                }
+            }
+            
+            // Additional length cost
+            if (length > baseLength) {
+                if (locType === 'sisterlocks' || method === 'ml-interlock') {
+                    additionalLengthCost = (length - baseLength) * 100; // $100 per additional inch for Sisterlocks
+                } else {
+                    additionalLengthCost = (length - baseLength) * 100; // $100 per additional inch for other methods
+                }
+            }
+            
+            // Density cost
+            if (density === 'medium') {
+                densityCost = 200;
+            } else if (density === 'high') {
+                densityCost = 400;
+            }
+            
+            // Circumference cost
+            if (circumference >= 22) {
+                circumferenceCost = 200;
+            }
+            
+            // Total rate
+            return baseRate + additionalLengthCost + densityCost + circumferenceCost + greyHairCost;
+        }
+    });
+</script>
+</body>
+</html>

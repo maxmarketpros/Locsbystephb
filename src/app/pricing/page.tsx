@@ -87,7 +87,7 @@ export default function PricingPage() {
               {/* Canva iframe wrapper */}
               <div className="relative w-full h-[1100px] sm:h-[1200px] md:h-[1300px] lg:h-[1400px]">
                 <iframe
-                  src="https://b8z01wxyny5232z7.canvacode.com/codelet/eyJhbGciOiJIUzI1NiJ9.eyJjIjoiYjh6MDF3eHlueTUyMzJ6NyIsImV4cCI6MTc3Mzk0ODIyOSwiZCI6IkRBR2trclRwOE04In0.Oy_ZzBIThSm6NPqSakhps3gJTBrg2mgF184O9dsUqB8/index.html"
+                  src="/calculator.html"
                   className="absolute top-0 left-0 w-full h-full border-0"
                   allowFullScreen
                   title="Locs By Steph B Pricing Calculator"
