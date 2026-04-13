@@ -812,7 +812,7 @@ export default function ServicesPage() {
                     We Do Not Offer Loc Extensions
                   </h3>
                   <p className="text-charcoal/70 text-[15px] leading-relaxed">
-                    We do not offer loc extensions. Loc extensions are a high-risk service with a significant scam presence in the market, and they tend to create more problems than they solve. This is an intentional decision to protect our clients.
+                    We do not offer loc extensions. In a market full of shortcuts, we protect our clients by only offering services that serve their long-term health.
                   </p>
                 </div>
               </div>

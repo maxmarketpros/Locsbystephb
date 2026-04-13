@@ -23,7 +23,7 @@ const faqs = [
   {
     question: "Do you add extensions?",
     answer:
-      "No. We do not offer loc extensions. Loc extensions are a high-risk service with a significant scam presence in the market, and they tend to create more problems than they solve — including slowing down the locking process and being costly to maintain. This is an intentional decision to protect our clients.",
+      "No. We do not offer loc extensions. In a market full of shortcuts, we protect our clients by only offering services that serve their long-term health.",
   },
   {
     question: "Do you offer services to men?",

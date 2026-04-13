@@ -148,7 +148,7 @@ export default function Header() {
                   : "bg-ivory text-charcoal hover:bg-white"
               }`}
             >
-              Book Now
+              Start Your Journey
             </a>
 
             {/* Mobile Toggle */}

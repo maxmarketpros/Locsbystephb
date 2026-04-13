@@ -273,7 +273,7 @@ export default function LocRetiePage() {
                     This technique creates a secure, instantly locked base that will not unravel when you wash your hair or go swimming. It is the absolute required standard for Sisterlocks™ and Microlocs, and many clients with Traditional Locs are converting to interlocking for the superior durability and sweat-resistance it offers active lifestyles.
                   </p>
                   <p>
-                    We use specialized, snag-free interlocking tools to weave the hair in a specific rotational pattern. We are highly trained to ensure that the lock is tightened securely <em className="italic">without</em> causing excessive tension on the scalp. A properly executed retighten should feel snug and secure, never painful or headache-inducing.
+                    We use specialized, snag-free interlocking tools to weave the hair in a specific rotational pattern. We exclusively use a 3 or 4-point rotation. We do not use the 2-point rotation, as it is more prone to slippage and uneven tension, which can lead to alopecia. We are highly trained to ensure that the lock is tightened securely <em className="italic">without</em> causing excessive tension on the scalp. A properly executed retighten should feel snug and secure, never painful or headache-inducing.
                   </p>
                 </div>
               </AnimateOnScroll>

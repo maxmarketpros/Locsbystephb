@@ -43,7 +43,7 @@ export default function Hero() {
 
           <AnimateOnScroll delay={200}>
             <p className="text-ivory/70 text-[15px] leading-relaxed max-w-[26rem] mb-8 font-[family-name:var(--font-body)] font-light">
-              Experience Rooted Maintenance—expert Microlocs installation and Sisterlocks™ care. A holistic hair journey built on beauty, empowerment, and intentional healing.
+              Reclaim your mornings. Reclaim your time. Expert Microlocs installation and Sisterlocks™ care—built on empowerment, time freedom, and intentional healing.
             </p>
           </AnimateOnScroll>
 
@@ -110,7 +110,7 @@ export default function Hero() {
 
             <AnimateOnScroll delay={200}>
               <p className="text-ivory/60 text-[17px] leading-relaxed max-w-[26rem] mb-12 font-[family-name:var(--font-body)] font-light">
-                Experience Rooted Maintenance—expert Microlocs installation and Sisterlocks™ care. A holistic hair journey built on beauty, empowerment, and intentional healing.
+                Reclaim your mornings. Reclaim your time. Expert Microlocs installation and Sisterlocks™ care—built on empowerment, time freedom, and intentional healing.
               </p>
             </AnimateOnScroll>
 

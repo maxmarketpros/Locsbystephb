@@ -208,7 +208,7 @@ export default function LocationAndParkingPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-10 py-4 bg-sage text-charcoal rounded-full text-base font-semibold tracking-[0.08em] uppercase hover:bg-sage-light transition-all duration-300 hover:shadow-lg hover:shadow-sage/20"
               >
-                Book Your Appointment Online
+                Start Your Loc Journey
               </a>
             </div>
           </AnimateOnScroll>

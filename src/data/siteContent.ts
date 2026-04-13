@@ -137,7 +137,7 @@ export const GALLERY_IMAGES = [
 
 export const LOC_EXTENSIONS_DISCLAIMER = {
   title: "We Do Not Offer Loc Extensions",
-  text: "We do not offer loc extensions. Loc extensions are a high-risk service with a significant scam presence in the market, and they tend to create more problems than they solve. This is an intentional decision to protect our clients.",
+  text: "We do not offer loc extensions. In a market full of shortcuts, we protect our clients by only offering services that serve their long-term health.",
 } as const;
 
 // ─── Services ───────────────────────────────────────────────────────────────
@@ -158,13 +158,13 @@ export const SERVICES = [
   {
     title: "Sisterlocks™",
     description:
-      "The premier small-loc system built with a patented technique. A premium commitment to lightweight, refined locs.",
+      "Sisterlocks™ installation—with the technique and care the brand demands. A premium commitment to lightweight, refined locs.",
     icon: "sparkle",
   },
   {
     title: "Retightening",
     description:
-      "Maintain the integrity and beauty of your locs with skilled retightening sessions designed around your unique growth pattern.",
+      "We maintain your locs so your life can keep moving. Skilled retightening sessions designed around your unique growth pattern and lifestyle.",
     icon: "refresh",
   },
   {

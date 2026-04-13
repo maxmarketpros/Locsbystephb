@@ -202,7 +202,7 @@ export default function LocInstallationPage() {
                     The establishment day (or days, depending on the loc size) is an exciting milestone. For Microlocs and Sisterlocks™, the process can take anywhere from 15 to 40 hours spread across multiple days. For traditional locs, it typically only takes a few hours. 
                   </p>
                   <p>
-                    Before you sit in the chair, your hair must be deeply cleansed, free of all oils, conditioners, to ensure the hair fibers can grip properly during installation. The session begins with establishing an intentional, immaculate grid at the base of the neck, working methodically up to the crown. 
+                    Before you sit in the chair, your hair must be deeply cleansed, free of all oils, conditioners, to ensure the hair fibers can grip properly during installation. The session begins with establishing an intentional, immaculate grid at the base of the neck, working methodically up to the crown. All installations use our 3 or 4-point rotation exclusively—we do not use the 2-point rotation, as it is more prone to slippage and uneven tension, which can lead to alopecia.
                   </p>
                   <p>
                     We prioritize your comfort throughout the establishment. We take breaks to stretch, hydrate, and relax. While it is a lengthy commitment, witnessing the transformation in the mirror is an unforgettable experience. This is the last time you will ever have to worry about detangling your loose natural hair. 
