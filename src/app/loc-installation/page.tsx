@@ -7,7 +7,7 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 export const metadata: Metadata = {
   title: "Professional Loc Installation in Inglewood, CA — Starter Locs",
   description:
-    "Start your loc journey right with expert loc installation in Inglewood, CA. Specializing in Microlocs, Sisterlocks, and Traditional Starter Locs.",
+    "Start your loc journey right with expert loc installation in Inglewood, CA. Specializing in Microlocs, Sisterlocks™, and Traditional Starter Locs.",
   keywords: [
     "loc installation Inglewood CA",
     "starter locs Inglewood",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Expert Loc Installation & Establishment in Inglewood, CA",
     description:
-      "Begin your natural hair journey with a flawless foundation. Book your Microlocs or Sisterlocks installation with our expert stylist in Inglewood.",
+      "Begin your natural hair journey with a flawless foundation. Book your Microlocs or Sisterlocks™ installation with our expert stylist in Inglewood.",
   },
 };
 
@@ -66,7 +66,7 @@ export default function LocInstallationPage() {
                     The foundation of every beautiful set of locs is a flawless installation. Starting locs requires vision, patience, and a deep understanding of hair density, curl pattern, and grid geometry.
                   </p>
                   <p>
-                    Whether you are drawn to the delicate versatility of Microlocs, the premium structured grid of Sisterlocks, or the organic grounding of Traditional Locs, our dedicated studio in Inglewood provides unparalleled expertise to ensure your journey starts on the right path.
+                    Whether you are drawn to the delicate versatility of Microlocs, the premium structured grid of Sisterlocks™, or the organic grounding of Traditional Locs, our dedicated studio in Inglewood provides unparalleled expertise to ensure your journey starts on the right path.
                   </p>
                 </div>
               </AnimateOnScroll>
@@ -199,7 +199,7 @@ export default function LocInstallationPage() {
               <AnimateOnScroll delay={100}>
                 <div className="space-y-4 text-charcoal/70 text-[15px] leading-relaxed">
                   <p>
-                    The establishment day (or days, depending on the loc size) is an exciting milestone. For Microlocs and Sisterlocks, the process can take anywhere from 15 to 40 hours spread across multiple days. For traditional locs, it typically only takes a few hours. 
+                    The establishment day (or days, depending on the loc size) is an exciting milestone. For Microlocs and Sisterlocks™, the process can take anywhere from 15 to 40 hours spread across multiple days. For traditional locs, it typically only takes a few hours. 
                   </p>
                   <p>
                     Before you sit in the chair, your hair must be deeply cleansed, free of all oils, conditioners, to ensure the hair fibers can grip properly during installation. The session begins with establishing an intentional, immaculate grid at the base of the neck, working methodically up to the crown. 
@@ -210,7 +210,7 @@ export default function LocInstallationPage() {
                 </div>
               </AnimateOnScroll>
 
-              {/* Deposit Callout */}
+              {/* Non-Refundable Fee Callout */}
               <AnimateOnScroll delay={200}>
                 <div className="mt-8 bg-sage-muted rounded-2xl p-6 flex items-start gap-4">
                   <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-sage/15 flex items-center justify-center mt-0.5">
@@ -219,9 +219,9 @@ export default function LocInstallationPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-charcoal font-semibold text-sm mb-1">Installation Deposit</p>
+                    <p className="text-charcoal font-semibold text-sm mb-1">Installation Non-Refundable Fee</p>
                     <p className="text-charcoal/60 text-sm leading-relaxed">
-                      Due to the immense time blocked out for new installations, a non-refundable <strong className="text-charcoal">$200 deposit</strong> is required. This guarantees your multi-day session without any scheduling interruptions.
+                      Due to the immense time blocked out for new installations, a non-refundable <strong className="text-charcoal">$200 non-refundable fee</strong> is required. This guarantees your multi-day session without any scheduling interruptions.
                     </p>
                   </div>
                 </div>
@@ -243,6 +243,153 @@ export default function LocInstallationPage() {
               </AnimateOnScroll>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ═══ YOUR 3-STEP PROCESS ═══ */}
+      <section className="py-20 lg:py-28 bg-ivory">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <AnimateOnScroll>
+              <p className="text-sage text-xs tracking-[0.2em] uppercase font-semibold mb-3 font-[family-name:var(--font-accent)] text-sm">
+                Your 3-Visit Journey
+              </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={50}>
+              <h2 className="font-[family-name:var(--font-heading)] text-charcoal text-3xl lg:text-4xl font-bold leading-tight mb-4">
+                The Installation Process
+              </h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={100}>
+              <p className="text-charcoal/60 text-base leading-relaxed max-w-2xl mx-auto">
+                Your journey to Microlocs or Sisterlocks™ begins with a simple 3-visit package — Consultation, Establishment, and your First Retightening.
+              </p>
+            </AnimateOnScroll>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            <AnimateOnScroll delay={100}>
+              <div className="relative bg-white rounded-3xl p-8 lg:p-10 shadow-sm border border-charcoal/5 h-full">
+                <div className="w-12 h-12 rounded-xl bg-sage/15 flex items-center justify-center mb-6">
+                  <span className="text-sage font-[family-name:var(--font-heading)] text-2xl font-bold">01</span>
+                </div>
+                <h3 className="text-charcoal font-[family-name:var(--font-heading)] text-xl font-bold mb-3">Consultation Visit</h3>
+                <p className="text-charcoal/70 text-sm leading-relaxed mb-4">
+                  We&apos;ll discuss your lifestyle and hair goals, assess your hair&apos;s texture and health, and establish 6&ndash;9 test locks to see how your hair responds over 2&ndash;4 weeks.
+                </p>
+                <p className="text-sage text-xs font-semibold tracking-wide uppercase">$50 consultation fee</p>
+              </div>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll delay={200}>
+              <div className="relative bg-white rounded-3xl p-8 lg:p-10 shadow-sm border border-charcoal/5 h-full">
+                <div className="w-12 h-12 rounded-xl bg-sage/15 flex items-center justify-center mb-6">
+                  <span className="text-sage font-[family-name:var(--font-heading)] text-2xl font-bold">02</span>
+                </div>
+                <h3 className="text-charcoal font-[family-name:var(--font-heading)] text-xl font-bold mb-3">Establishment Session</h3>
+                <p className="text-charcoal/70 text-sm leading-relaxed mb-4">
+                  Over the course of 20 to 40 hours, your Microlocs or Sisterlocks™ come to life. Every lock is meticulously crafted to suit your hair type and desired style.
+                </p>
+                <p className="text-sage text-xs font-semibold tracking-wide uppercase">$200 non-refundable fee to reserve</p>
+              </div>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll delay={300}>
+              <div className="relative bg-white rounded-3xl p-8 lg:p-10 shadow-sm border border-charcoal/5 h-full">
+                <div className="w-12 h-12 rounded-xl bg-sage/15 flex items-center justify-center mb-6">
+                  <span className="text-sage font-[family-name:var(--font-heading)] text-2xl font-bold">03</span>
+                </div>
+                <h3 className="text-charcoal font-[family-name:var(--font-heading)] text-xl font-bold mb-3">First Retightening</h3>
+                <p className="text-charcoal/70 text-sm leading-relaxed mb-4">
+                  Scheduled 4 weeks after your establishment, we&apos;ll tighten and perfect each lock, ensuring they&apos;re secure and on the right path to beautiful maturation.
+                </p>
+                <p className="text-sage text-xs font-semibold tracking-wide uppercase">Included in package</p>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ INSTALLATION METHODS — BEFORE & AFTER ═══ */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <AnimateOnScroll>
+              <p className="text-sage text-xs tracking-[0.2em] uppercase font-semibold mb-3 font-[family-name:var(--font-accent)] text-sm">
+                Real Transformations
+              </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={50}>
+              <h2 className="font-[family-name:var(--font-heading)] text-charcoal text-3xl lg:text-4xl font-bold leading-tight mb-4">
+                Before &amp; After Installation
+              </h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={100}>
+              <p className="text-charcoal/60 text-base leading-relaxed max-w-2xl mx-auto">
+                See the transformation from natural hair to freshly installed locs across different installation methods.
+              </p>
+            </AnimateOnScroll>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+            {/* Interlock Method */}
+            <AnimateOnScroll delay={100}>
+              <div>
+                <h3 className="text-charcoal font-[family-name:var(--font-heading)] text-lg font-bold mb-4">Microlocs — Interlock Method</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-md">
+                      <Image src="/images/install-types/microloc-interlock-before.jpg" alt="Before microloc installation — interlock method" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+                    </div>
+                    <p className="text-center text-charcoal/50 text-xs font-semibold tracking-wide uppercase mt-2">Before</p>
+                  </div>
+                  <div>
+                    <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-md">
+                      <Image src="/images/install-types/microloc-interlock-after.jpg" alt="After microloc installation — interlock method" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+                    </div>
+                    <p className="text-center text-charcoal/50 text-xs font-semibold tracking-wide uppercase mt-2">After</p>
+                  </div>
+                </div>
+              </div>
+            </AnimateOnScroll>
+
+            {/* Two Strand Twist Method */}
+            <AnimateOnScroll delay={200}>
+              <div>
+                <h3 className="text-charcoal font-[family-name:var(--font-heading)] text-lg font-bold mb-4">Microlocs — Two Strand Twist</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-md">
+                      <Image src="/images/install-types/microloc-two-strand-before.jpg" alt="Before microloc installation — two strand twist method" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+                    </div>
+                    <p className="text-center text-charcoal/50 text-xs font-semibold tracking-wide uppercase mt-2">Before</p>
+                  </div>
+                  <div>
+                    <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-md">
+                      <Image src="/images/install-types/microloc-two-strand-after.jpg" alt="After microloc installation — two strand twist method" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+                    </div>
+                    <p className="text-center text-charcoal/50 text-xs font-semibold tracking-wide uppercase mt-2">After</p>
+                  </div>
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
+
+          {/* Additional install examples */}
+          <AnimateOnScroll delay={300}>
+            <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {[
+                { src: "/images/install-types/sisterlocks-interlock-method.jpg", alt: "Sisterlocks™ installed using interlock method" },
+                { src: "/images/install-types/consultation-two-strand.jpg", alt: "Consultation for two strand twist installation" },
+                { src: "/images/install-types/install-type-01.jpg", alt: "Loc installation example — professional results" },
+                { src: "/images/install-types/install-type-02.jpg", alt: "Loc installation showcase — expert grid parting" },
+              ].map((img) => (
+                <div key={img.src} className="relative aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                  <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 640px) 50vw, 25vw" />
+                </div>
+              ))}
+            </div>
+          </AnimateOnScroll>
         </div>
       </section>
 

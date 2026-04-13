@@ -7,7 +7,7 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 export const metadata: Metadata = {
   title: "Loc Retie & Retightening in Inglewood, CA — Microlocs Maintenance",
   description:
-    "Expert loc retie and retightening services in Inglewood, CA. Keep your Microlocs and Sisterlocks neat, strong, and healthy with regular professional maintenance.",
+    "Expert loc retie and retightening services in Inglewood, CA. Keep your Microlocs and Sisterlocks™ neat, strong, and healthy with regular professional maintenance.",
   keywords: [
     "loc retie Inglewood CA",
     "loc retightening near me",
@@ -66,7 +66,7 @@ export default function LocRetiePage() {
                     A consistent retie schedule is the single most important factor in the long-term health, strength, and appearance of your locs. Regular maintenance prevents thinning and keeps your grid immaculate.
                   </p>
                   <p>
-                    Specializing in Microlocs, Sisterlocks, and traditional loc interlocking, we provide meticulous retightening services in Inglewood, CA. Experience a comfortable, tension-sensitive session that ensures your new growth is properly incorporated into your flourishing locs.
+                    Specializing in Microlocs, Sisterlocks™, and traditional loc interlocking, we provide meticulous retightening services in Inglewood, CA. Experience a comfortable, tension-sensitive session that ensures your new growth is properly incorporated into your flourishing locs.
                   </p>
                 </div>
               </AnimateOnScroll>
@@ -180,6 +180,74 @@ export default function LocRetiePage() {
         </div>
       </section>
 
+      {/* ═══ MAINTENANCE RESULTS OVER TIME ═══ */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <AnimateOnScroll>
+              <p className="text-sage text-xs tracking-[0.2em] uppercase font-semibold mb-3 font-[family-name:var(--font-accent)] text-sm">
+                Consistency Pays Off
+              </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={50}>
+              <h2 className="font-[family-name:var(--font-heading)] text-charcoal text-3xl lg:text-4xl font-bold leading-tight mb-4">
+                Maintenance Results Over Time
+              </h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={100}>
+              <p className="text-charcoal/60 text-base leading-relaxed max-w-2xl mx-auto">
+                Regular retie appointments are the key to healthy, beautiful locs. See how consistent maintenance transforms locs over months and years.
+              </p>
+            </AnimateOnScroll>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+            {/* Cynthia — Maintenance Journey */}
+            <AnimateOnScroll delay={100}>
+              <div>
+                <h3 className="font-[family-name:var(--font-heading)] text-charcoal text-xl font-bold mb-2">Cynthia&apos;s Maintenance Journey</h3>
+                <p className="text-charcoal/50 text-sm mb-6">Softer texture &mdash; consistent interlock maintenance</p>
+                <div className="grid grid-cols-3 gap-3">
+                  {[
+                    { src: "/images/textures/cynthia-before-install.jpg", label: "Start", alt: "Cynthia before microloc installation" },
+                    { src: "/images/textures/cynthia-interlock-maintenance.jpg", label: "Maintenance", alt: "Cynthia after interlock maintenance" },
+                    { src: "/images/textures/cynthia-1yr-later.jpg", label: "1+ Year", alt: "Cynthia 1+ year of consistent maintenance" },
+                  ].map((img) => (
+                    <div key={img.src}>
+                      <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-md">
+                        <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 768px) 33vw, 16vw" />
+                      </div>
+                      <p className="text-center text-charcoal/50 text-[10px] font-semibold tracking-wide uppercase mt-2">{img.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </AnimateOnScroll>
+
+            {/* Robin — Before/After */}
+            <AnimateOnScroll delay={200}>
+              <div>
+                <h3 className="font-[family-name:var(--font-heading)] text-charcoal text-xl font-bold mb-2">Robin&apos;s Transformation</h3>
+                <p className="text-charcoal/50 text-sm mb-6">Microlocs &mdash; interlock method</p>
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { src: "/images/textures/robin-before-install.jpg", label: "Before", alt: "Robin before microlocs installation" },
+                    { src: "/images/textures/robin-after-install.jpg", label: "After Install", alt: "Robin after microlocs installation" },
+                  ].map((img) => (
+                    <div key={img.src}>
+                      <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-md">
+                        <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+                      </div>
+                      <p className="text-center text-charcoal/50 text-[10px] font-semibold tracking-wide uppercase mt-2">{img.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </div>
+      </section>
+
       {/* ═══ SECTION 2: OUR METHOD ═══ */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -202,7 +270,7 @@ export default function LocRetiePage() {
                     We specialize in the <strong className="text-charcoal">interlocking method</strong> for retightening. Unlike palm-rolling, which relies heavily on gels, waxes, and continued palm friction to hold the hair together until the next wash, interlocking physically weaves the new growth back through the root base.
                   </p>
                   <p>
-                    This technique creates a secure, instantly locked base that will not unravel when you wash your hair or go swimming. It is the absolute required standard for Sisterlocks and Microlocs, and many clients with Traditional Locs are converting to interlocking for the superior durability and sweat-resistance it offers active lifestyles.
+                    This technique creates a secure, instantly locked base that will not unravel when you wash your hair or go swimming. It is the absolute required standard for Sisterlocks™ and Microlocs, and many clients with Traditional Locs are converting to interlocking for the superior durability and sweat-resistance it offers active lifestyles.
                   </p>
                   <p>
                     We use specialized, snag-free interlocking tools to weave the hair in a specific rotational pattern. We are highly trained to ensure that the lock is tightened securely <em className="italic">without</em> causing excessive tension on the scalp. A properly executed retighten should feel snug and secure, never painful or headache-inducing.
@@ -278,7 +346,7 @@ export default function LocRetiePage() {
                 </div>
                 <h3 className="text-ivory font-semibold text-lg mb-2">4 to 6 Weeks</h3>
                 <p className="text-ivory/50 text-sm leading-relaxed">
-                  Ideal for Sisterlocks and Microlocs with high loc counts. Keeping the roots tight prevents the tiny grid from shifting or breaking due to friction.
+                  Ideal for Sisterlocks™ and Microlocs with high loc counts. Keeping the roots tight prevents the tiny grid from shifting or breaking due to friction.
                 </p>
               </div>
 

@@ -9,14 +9,14 @@ export const SITE = {
   email: "",
   tagline: "Rooted in Care. Elevated by Craft.",
   description:
-    "Premier loc specialist offering Microlocs, Sisterlocks, starter locs, retightening, interlocking, loc repair, and loc detox services. Your hair journey becomes a healing journey.",
+    "Premier loc specialist offering Microlocs, Sisterlocks™, starter locs, retightening, interlocking, loc repair, and loc detox services. Your hair journey becomes a healing journey.",
 } as const;
 
 // ─── Navigation ─────────────────────────────────────────────────────────────
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Loc Install Process", href: "/loc-install-process" },
+  { label: "Services", href: "/services" },
   { label: "Loc Stages", href: "/loc-stages" },
   { label: "Install Requirements", href: "/install-requirements" },
   { label: "Transfer Clients", href: "/transfer-clients" },
@@ -30,14 +30,14 @@ export const NAV_LINKS = [
 export const HEADER_LINKS = [
   { label: "Home", href: "/" },
   { label: "Pricing", href: "/pricing" },
-  { 
+  {
     label: "Services",
     subLinks: [
+      { label: "All Services", href: "/services" },
       { label: "Loc Installation", href: "/loc-installation" },
       { label: "Loc Repair", href: "/loc-repair" },
       { label: "Loc Retie", href: "/loc-retie" },
       { label: "Loc Coloring", href: "/loc-coloring" },
-      { label: "Install Process Guide", href: "/loc-install-process" },
     ]
   },
   { 
@@ -116,6 +116,30 @@ export const CLIENT_IMAGES = [
   },
 ] as const;
 
+// ─── Gallery Images (Loc Results from our Inglewood Studio) ────────────────
+
+export const GALLERY_IMAGES = [
+  { src: "/images/gallery/loc-results-01.jpg", alt: "Beautiful loc results from our Inglewood studio — client showcase" },
+  { src: "/images/gallery/loc-results-02.jpg", alt: "Stunning microloc installation results at Locs By Steph B" },
+  { src: "/images/gallery/loc-results-03.jpg", alt: "Professional loc styling and maintenance results in Inglewood" },
+  { src: "/images/gallery/loc-results-04.jpg", alt: "Client showcasing healthy loc growth and expert retightening" },
+  { src: "/images/gallery/loc-results-05.jpg", alt: "Loc results demonstrating expert grid pattern and healthy locs" },
+  { src: "/images/gallery/loc-results-06.jpg", alt: "Beautifully maintained locs highlighting expert craftsmanship" },
+  { src: "/images/gallery/loc-results-07.jpg", alt: "Client loc transformation — healthy growth and definition" },
+  { src: "/images/gallery/loc-results-08.jpg", alt: "Precise microloc grid showcasing installation artistry" },
+  { src: "/images/gallery/loc-results-09.jpg", alt: "Natural loc maturation — beautiful texture and healthy shine" },
+  { src: "/images/gallery/loc-results-10.jpg", alt: "Expert retightening results from our Inglewood studio" },
+  { src: "/images/gallery/loc-results-11.jpg", alt: "Loc styling and maintenance — polished and professional results" },
+  { src: "/images/gallery/loc-results-12.jpg", alt: "Client showcase — thriving locs after dedicated maintenance care" },
+] as const;
+
+// ─── Loc Extensions Disclaimer ─────────────────────────────────────────────
+
+export const LOC_EXTENSIONS_DISCLAIMER = {
+  title: "We Do Not Offer Loc Extensions",
+  text: "We do not offer loc extensions. Loc extensions are a high-risk service with a significant scam presence in the market, and they tend to create more problems than they solve. This is an intentional decision to protect our clients.",
+} as const;
+
 // ─── Services ───────────────────────────────────────────────────────────────
 
 export const SERVICES = [
@@ -132,7 +156,7 @@ export const SERVICES = [
     icon: "grid",
   },
   {
-    title: "Sisterlocks",
+    title: "Sisterlocks™",
     description:
       "The premier small-loc system built with a patented technique. A premium commitment to lightweight, refined locs.",
     icon: "sparkle",
@@ -245,7 +269,7 @@ export const INVESTMENT_CONTENT = {
     "Great locs are a long-term investment in yourself. Understanding the cost of loc maintenance helps you plan with confidence and choose the path that fits your life.",
   cards: [
     {
-      title: "Sisterlocks",
+      title: "Sisterlocks™",
       description:
         "A premium, patented system requiring specialized training and certification. The initial installation is a multi-day process, and maintenance reflects the precision and expertise involved.",
       badge: "Premium Commitment",
@@ -253,7 +277,7 @@ export const INVESTMENT_CONTENT = {
     {
       title: "Microlocs",
       description:
-        "A flexible option that offers fine, versatile locs without the brand-specific requirements of Sisterlocks. Installation is detailed and time-intensive, but maintenance tends to be more adaptable.",
+        "A flexible option that offers fine, versatile locs without the brand-specific requirements of Sisterlocks™. Installation is detailed and time-intensive, but maintenance tends to be more adaptable.",
       badge: "Flexible & Versatile",
     },
     {

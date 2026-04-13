@@ -19,7 +19,7 @@ export default function Footer() {
             />
             <p className="text-ivory/70 text-sm leading-relaxed max-w-md mb-6">
               Your hair journey becomes a healing journey. We specialize in
-              Microlocs, Sisterlocks, starter locs, retightening, interlocking,
+              Microlocs, Sisterlocks™, starter locs, retightening, interlocking,
               loc repair, and loc detox—rooted in care and elevated by craft.
             </p>
             <a

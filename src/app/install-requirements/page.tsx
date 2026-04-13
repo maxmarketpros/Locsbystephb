@@ -7,7 +7,7 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 export const metadata: Metadata = {
   title: "Install Requirements & FAQs | Locs By Steph B — Inglewood, CA",
   description:
-    "Review our requirements for loc installation and read frequently asked questions about Microlocs and Sisterlocks. We prioritize scalp health first and locs second.",
+    "Review our requirements for loc installation and read frequently asked questions about Microlocs and Sisterlocks™. We prioritize scalp health first and locs second.",
   keywords: [
     "loc install requirements",
     "microlocs faq",
@@ -23,59 +23,59 @@ const faqs = [
   {
     question: "Do you add extensions?",
     answer:
-      "No! I do not offer this service as I have found that adding extensions to hair tends to slow down the locking process and is costly for the client to maintain.",
+      "No. We do not offer loc extensions. Loc extensions are a high-risk service with a significant scam presence in the market, and they tend to create more problems than they solve — including slowing down the locking process and being costly to maintain. This is an intentional decision to protect our clients.",
   },
   {
     question: "Do you offer services to men?",
     answer: "At this time I only serve women.",
   },
   {
-    question: "What are Microlocs and Sisterlocks?",
+    question: "What are Microlocs and Sisterlocks™?",
     answer:
-      "Microlocs and Sisterlocks® are both types of small, uniform locks that offer versatility and flexibility in styling. Sisterlocks® are installed using a patented grid and tool by a certified consultant, while Microlocs can be installed using various techniques such as two-strand twists, braids, or interlocking.",
+      "Microlocs and Sisterlocks™ are both types of small, uniform locks that offer versatility and flexibility in styling. Sisterlocks™ are installed using a patented grid and tool by a certified consultant, while Microlocs can be installed using various techniques such as two-strand twists, braids, or interlocking.",
   },
   {
-    question: "What is the difference between Microlocs and Sisterlocks®?",
+    question: "What is the difference between Microlocs and Sisterlocks™?",
     answer:
-      "The main differences lie in the installation method and size. Sisterlocks® are generally smaller and installed using a specific patented tool and grid system by a certified consultant. Microlocs can be slightly larger and can be installed with more flexible methods, allowing for more variation in size and technique.",
+      "The main differences lie in the installation method and size. Sisterlocks™ are generally smaller and installed using a specific patented tool and grid system by a certified consultant. Microlocs can be slightly larger and can be installed with more flexible methods, allowing for more variation in size and technique.",
   },
   {
-    question: "How are Microlocs and Sisterlocks® established?",
+    question: "How are Microlocs and Sisterlocks™ established?",
     answer:
-      "Sisterlocks are installed by parting the hair into a specific grid pattern and locking it with a patented tool, a process that can take 20-40 hours or more. Microlocs, on the other hand, can be installed using different methods like twisting, braiding, or interlocking and may take several hours to days depending on hair length and density. *Please note that Locs By Steph B LLC only offers the interlocking method for Microlocs.",
+      "Sisterlocks™ are installed by parting the hair into a specific grid pattern and locking it with a patented tool, a process that can take 20-40 hours or more. Microlocs, on the other hand, can be installed using different methods like twisting, braiding, or interlocking and may take several hours to days depending on hair length and density. *Please note that Locs By Steph B LLC only offers the interlocking method for Microlocs.",
   },
   {
-    question: "What is the maintenance schedule for Microlocs and Sisterlocks®?",
+    question: "What is the maintenance schedule for Microlocs and Sisterlocks™?",
     answer:
-      "Both Microlocs and Sisterlocks® require regular retightening every 4-8 weeks, depending on hair growth. The first retightening for Sisterlocks® is usually scheduled 4-6 weeks after installation, similar to Microlocs. Your unique hair texture is what determines your retie timing. For example 4C hair can get matted faster and so shorter retie times (usually within the 4-5 week timeline) are required to maintain the grid. Whereas someone with a wavy curl pattern may only need to come in for a retie 6-7 weeks at a time.",
+      "Both Microlocs and Sisterlocks™ require regular retightening every 4-8 weeks, depending on hair growth. The first retightening for Sisterlocks™ is usually scheduled 4-6 weeks after installation, similar to Microlocs. Your unique hair texture is what determines your retie timing. For example 4C hair can get matted faster and so shorter retie times (usually within the 4-5 week timeline) are required to maintain the grid. Whereas someone with a wavy curl pattern may only need to come in for a retie 6-7 weeks at a time.",
   },
   {
-    question: "How much does it cost to establish Microlocs and Sisterlocks®?",
+    question: "How much does it cost to establish Microlocs and Sisterlocks™?",
     answer:
-      "Because the difference between Sisterlocks® and Microlocs has become quite skewed, installation costs for both can fall within the same range. Generally, both of these loc installs can start around $1500-$1900 for the first 4 inches of hair to over $4000, depending on your unique hair characteristics, length, density, and the loctician's expertise. Those with silkier hair require much more maintenance than those with predominantly 4C hair. This will make their 4-8 week maintenance more expensive and more frequent. Also note that pricing can vary greatly as the cost of living is different for each loctician.",
+      "Because the difference between Sisterlocks™ and Microlocs has become quite skewed, installation costs for both can fall within the same range. Generally, both of these loc installs can start around $1500-$1900 for the first 4 inches of hair to over $4000, depending on your unique hair characteristics, length, density, and the loctician's expertise. Those with silkier hair require much more maintenance than those with predominantly 4C hair. This will make their 4-8 week maintenance more expensive and more frequent. Also note that pricing can vary greatly as the cost of living is different for each loctician.",
   },
   {
-    question: "How long does it take for Microlocs and Sisterlocks® to mature?",
+    question: "How long does it take for Microlocs and Sisterlocks™ to mature?",
     answer:
-      "Both Microlocs and Sisterlocks® typically take 2+ years to fully mature, depending on your lifestyle, unique hair characteristics, attending your regular maintenance routine on time, and environmental factors such as drier climate or hard water conditions.",
+      "Both Microlocs and Sisterlocks™ typically take 2+ years to fully mature, depending on your lifestyle, unique hair characteristics, attending your regular maintenance routine on time, and environmental factors such as drier climate or hard water conditions.",
   },
   {
-    question: "Can Microlocs and Sisterlocks® be undone?",
+    question: "Can Microlocs and Sisterlocks™ be undone?",
     answer:
-      "Microlocs and Sisterlocks are a permanent hairstyle. If this is one of the questions you are considering, we suggest you stick with braids. However, we also realize that locking your hair can be scary. Yes, both locking methods can be undone, but the process is time-consuming and should ideally be done by a professional to minimize hair damage.",
+      "Microlocs and Sisterlocks™ are a permanent hairstyle. If this is one of the questions you are considering, we suggest you stick with braids. However, we also realize that locking your hair can be scary. Yes, both locking methods can be undone, but the process is time-consuming and should ideally be done by a professional to minimize hair damage.",
   },
   {
-    question: "Can I color my Microlocs or Sisterlocks®?",
+    question: "Can I color my Microlocs or Sisterlocks™?",
     answer:
       "Yes, you can color both, but it’s recommended to wait until your locks have matured to avoid affecting the locking process. Hair colored too soon softens the hair and oftentimes delays or destroys the entire locking process. Coloring your hair will change the texture of your hair. When your loctician locs your hair, they are considering the best pattern and technique based on your current hair characteristics. Always consult your loctician before applying chemical treatments.",
   },
   {
-    question: "How often should I wash my Microlocs or Sisterlocks®?",
+    question: "How often should I wash my Microlocs or Sisterlocks™?",
     answer:
-      "It is generally recommended to wash Microlocs and Sisterlocks® every 10-14 Days. Initially, you may need to follow a specific Dry Washing technique to avoid unraveling until cleared to use a braid and band method to wash.",
+      "It is generally recommended to wash Microlocs and Sisterlocks™ every 10-14 Days. Initially, you may need to follow a specific Dry Washing technique to avoid unraveling until cleared to use a braid and band method to wash.",
   },
   {
-    question: "Can I swim with Microlocs or Sisterlocks®?",
+    question: "Can I swim with Microlocs or Sisterlocks™?",
     answer:
       "Yes, you can swim with both, and it’s important to braid and band before swimming and purchase a swim cap to protect your locs. Braiding and banding your locs helps to minimize slippage in your locs, which are costly to repair.",
   },

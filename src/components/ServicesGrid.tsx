@@ -61,7 +61,7 @@ export default function ServicesGrid() {
           </AnimateOnScroll>
           <AnimateOnScroll delay={100}>
             <h2 className="font-[family-name:var(--font-heading)] text-charcoal text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-              Microlocs, Sisterlocks &amp;{" "}
+              Microlocs, Sisterlocks™ &amp;{" "}
               <span className="text-navy">Loc Services in Inglewood</span>
             </h2>
           </AnimateOnScroll>

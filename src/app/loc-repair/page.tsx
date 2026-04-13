@@ -7,7 +7,7 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 export const metadata: Metadata = {
   title: "Professional Loc Repair in Inglewood, CA — Fix Damaged, Thinning Locs",
   description:
-    "Expert loc repair and restoration services in Inglewood, CA. Specializing in fixing thinning, broken, or damaged Microlocs and Sisterlocks. Save your locs today.",
+    "Expert loc repair and restoration services in Inglewood, CA. Specializing in fixing thinning, broken, or damaged Microlocs and Sisterlocks™. Save your locs today.",
   keywords: [
     "loc repair Inglewood CA",
     "fix damaged locs",
@@ -67,7 +67,7 @@ export default function LocRepairPage() {
                     Damaged, thinning, or breaking locs can be deeply discouraging, but they rarely mean the end of your locking journey. Many locs that appear beyond saving simply need professional structural reinforcement. 
                   </p>
                   <p>
-                    Whether your locs are suffering due to postpartum shedding, excessive tension, accidental pulling, color damage, or improper retightening techniques, we specialize in meticulously restoring the integrity of Microlocs, Sisterlocks, and Traditional Locs right here in Inglewood.
+                    Whether your locs are suffering due to postpartum shedding, excessive tension, accidental pulling, color damage, or improper retightening techniques, we specialize in meticulously restoring the integrity of Microlocs, Sisterlocks™, and Traditional Locs right here in Inglewood.
                   </p>
                 </div>
               </AnimateOnScroll>
@@ -312,6 +312,79 @@ export default function LocRepairPage() {
                   Do not exceed your recommended retightening timeframe. Depending on growth, reties are needed every 4 to 8 weeks to prevent matting and recurring weak spots.
                 </p>
               </div>
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* ═══ BEFORE & AFTER REPAIRS ═══ */}
+      <section className="py-20 lg:py-28 bg-ivory">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <AnimateOnScroll>
+              <p className="text-sage text-xs tracking-[0.2em] uppercase font-semibold mb-3 font-[family-name:var(--font-accent)] text-sm">
+                See the Difference
+              </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={50}>
+              <h2 className="font-[family-name:var(--font-heading)] text-charcoal text-3xl lg:text-4xl font-bold leading-tight">
+                Before &amp; After Repairs
+              </h2>
+            </AnimateOnScroll>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            {[
+              {
+                title: "Hole Repair",
+                before: { src: "/images/repairs/hole-repair-before.jpg", alt: "Loc with hole damage before repair" },
+                after: { src: "/images/repairs/hole-repair-after.jpg", alt: "Loc after professional hole repair" },
+              },
+              {
+                title: "Slippage Repair",
+                before: { src: "/images/repairs/slippage-before.jpg", alt: "Loc slippage before professional repair" },
+                after: { src: "/images/repairs/slippage-repaired.jpg", alt: "Loc after slippage repair — fully restored" },
+              },
+              {
+                title: "Bunching Repair",
+                before: { src: "/images/repairs/bunching-before.jpg", alt: "Loc bunching damage before repair" },
+                after: { src: "/images/repairs/bunching-repair.jpg", alt: "Loc after professional bunching repair" },
+              },
+            ].map((repair, i) => (
+              <AnimateOnScroll key={repair.title} delay={i * 100}>
+                <div>
+                  <h3 className="text-charcoal font-[family-name:var(--font-heading)] text-lg font-bold mb-4 text-center">{repair.title}</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-md">
+                        <Image src={repair.before.src} alt={repair.before.alt} fill className="object-cover" sizes="(max-width: 768px) 50vw, 16vw" />
+                      </div>
+                      <p className="text-center text-charcoal/50 text-xs font-semibold tracking-wide uppercase mt-2">Before</p>
+                    </div>
+                    <div>
+                      <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-md">
+                        <Image src={repair.after.src} alt={repair.after.alt} fill className="object-cover" sizes="(max-width: 768px) 50vw, 16vw" />
+                      </div>
+                      <p className="text-center text-charcoal/50 text-xs font-semibold tracking-wide uppercase mt-2">After</p>
+                    </div>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+            ))}
+          </div>
+
+          {/* Grid repair + severe bunching */}
+          <AnimateOnScroll delay={400}>
+            <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {[
+                { src: "/images/repairs/grid-before-repair.jpg", alt: "Grid pattern before professional reconstruction" },
+                { src: "/images/repairs/grid-after-repair.jpg", alt: "Grid pattern after professional reconstruction" },
+                { src: "/images/repairs/severe-bunching.jpg", alt: "Severe loc bunching requiring professional intervention" },
+              ].map((img) => (
+                <div key={img.src} className="relative aspect-square rounded-xl overflow-hidden shadow-sm">
+                  <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 640px) 50vw, 25vw" />
+                </div>
+              ))}
             </div>
           </AnimateOnScroll>
         </div>

@@ -65,8 +65,8 @@ export default function BrandPromise() {
                 {/* Main image */}
                 <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-xl">
                   <Image
-                    src={CLIENT_IMAGES[8].src}
-                    alt={CLIENT_IMAGES[8].alt}
+                    src="/images/hero/rooted-in-care.jpg"
+                    alt="Rooted in Care, Elevated by Craft — Locs By Steph B"
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -76,8 +76,8 @@ export default function BrandPromise() {
                 {/* Overlapping smaller image */}
                 <div className="absolute -bottom-8 -right-4 lg:-right-8 w-40 lg:w-48 aspect-[3/4] rounded-2xl overflow-hidden shadow-xl border-4 border-ivory">
                   <Image
-                    src={CLIENT_IMAGES[9].src}
-                    alt={CLIENT_IMAGES[9].alt}
+                    src="/images/hero/rooted-in-care-sm.jpg"
+                    alt="Rooted in Care, Elevated by Craft — Locs By Steph B"
                     fill
                     className="object-cover"
                     sizes="192px"

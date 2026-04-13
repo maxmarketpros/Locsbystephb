@@ -7,7 +7,7 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 export const metadata: Metadata = {
   title: "Professional Loc Coloring in Inglewood, CA — Safe Color for Locs",
   description:
-    "Expert loc coloring and bleaching services in Inglewood, CA. Safely dye your Microlocs, Sisterlocks, or Traditional Locs while protecting their structural integrity.",
+    "Expert loc coloring and bleaching services in Inglewood, CA. Safely dye your Microlocs, Sisterlocks™, or Traditional Locs while protecting their structural integrity.",
   keywords: [
     "loc coloring Inglewood CA",
     "dyeing locs near me",
@@ -66,7 +66,7 @@ export default function LocColoringPage() {
                     Vibrant honey blondes, deep auburn cherry tones, and dimensional highlights can elevate your loc journey to an entirely new level. But introducing chemicals to locked hair requires advanced scientific understanding.
                   </p>
                   <p>
-                    Because locs act like sponges, processing methods that work on loose hair can be disastrous for locs. We provide specialized, deeply conscious color services for Microlocs, Sisterlocks, and Traditional Locs in Inglewood, ensuring that your vibrant new color never comes at the cost of your hair&apos;s health.
+                    Because locs act like sponges, processing methods that work on loose hair can be disastrous for locs. We provide specialized, deeply conscious color services for Microlocs, Sisterlocks™, and Traditional Locs in Inglewood, ensuring that your vibrant new color never comes at the cost of your hair&apos;s health.
                   </p>
                 </div>
               </AnimateOnScroll>
@@ -90,6 +90,25 @@ export default function LocColoringPage() {
           </div>
         </div>
         <div className="h-px bg-sage/15" />
+      </section>
+
+      {/* ═══ OUTSOURCED NOTICE ═══ */}
+      <section className="py-6 lg:py-8 bg-amber-50 border-b border-amber-200">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center mt-0.5">
+              <svg className="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+              </svg>
+            </div>
+            <div>
+              <p className="text-amber-900 font-semibold text-sm mb-1">Licensed Professional Service</p>
+              <p className="text-amber-800/70 text-sm leading-relaxed">
+                Color services are performed by a licensed cosmetology professional. Locs By Steph B does not directly offer color services, as this requires separate professional licensing.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ═══ OVERVIEW BAR ═══ */}

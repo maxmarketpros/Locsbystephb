@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | Locs By Steph B",
   },
   description:
-    "Expert loctician offering Microlocs, Sisterlocks, starter locs, retightening, and loc repair in a welcoming environment. Book your consultation today.",
+    "Expert loctician offering Microlocs, Sisterlocks™, starter locs, retightening, and loc repair in a welcoming environment. Book your consultation today.",
   keywords: [
     "loc stylist",
     "loctician",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Locs By Steph B | Premier Loc Stylist & Interlocking Expert",
     description:
-      "Expert loctician offering Microlocs, Sisterlocks, starter locs, retightening, and loc repair. Book your consultation today.",
+      "Expert loctician offering Microlocs, Sisterlocks™, starter locs, retightening, and loc repair. Book your consultation today.",
     type: "website",
     url: "https://locsbystephb.com",
     locale: "en_US",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Locs By Steph B | Premier Loc Stylist",
     description:
-      "Expert loctician offering Microlocs, Sisterlocks, starter locs, retightening, and loc repair. Book your consultation today.",
+      "Expert loctician offering Microlocs, Sisterlocks™, starter locs, retightening, and loc repair. Book your consultation today.",
   },
   robots: {
     index: true,
@@ -95,7 +95,7 @@ const jsonLd = {
     addressCountry: "US",
   },
   description:
-    "Expert loctician offering Microlocs, Sisterlocks, starter locs, retightening, and loc repair in a welcoming environment.",
+    "Expert loctician offering Microlocs, Sisterlocks™, starter locs, retightening, and loc repair in a welcoming environment.",
 };
 
 export default function RootLayout({

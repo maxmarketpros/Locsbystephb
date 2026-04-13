@@ -95,7 +95,7 @@ const policies = [
             <ul className="space-y-3">
               <li>
                 <strong className="text-charcoal block">48-Hour Notice:</strong>
-                If you cancel with at least 48 hours&apos; notice, your deposit will be forfeited, but no further charges will apply.
+                If you cancel with at least 48 hours&apos; notice, your non-refundable fee will be forfeited, but no further charges will apply.
               </li>
               <li>
                 <strong className="text-charcoal block">Less than 48-Hour Notice:</strong>
@@ -179,7 +179,7 @@ const policies = [
     content: (
       <>
         <p className="mb-4">
-          Services scheduled outside of regular hours will incur additional charges, excluding Sisterlocks/Brotherlocks &amp; Microlocs Installations.
+          Services scheduled outside of regular hours will incur additional charges, excluding Sisterlocks™/Brotherlocks &amp; Microlocs Installations.
         </p>
         <p className="font-semibold text-charcoal mb-2">After Hours Charges:</p>
         <ul className="list-disc pl-5 space-y-2">

@@ -5,9 +5,9 @@ import { SITE } from "@/data/siteContent";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 export const metadata: Metadata = {
-  title: "Loc Stages Guide — Microlocs & Sisterlocks Progression | Locs By Steph B",
+  title: "Loc Stages Guide — Microlocs & Sisterlocks™ Progression | Locs By Steph B",
   description:
-    "Learn about the 4 loc stages: starter, budding, teenage, and mature. Understand how your unique hair characteristics shape your microlocs or Sisterlocks journey.",
+    "Learn about the 4 loc stages: starter, budding, teenage, and mature. Understand how your unique hair characteristics shape your microlocs or Sisterlocks™ journey.",
   keywords: [
     "loc stages",
     "starter locs phase",
@@ -118,6 +118,134 @@ export default function LocStagesPage() {
               </AnimateOnScroll>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ═══ REAL CLIENT PROGRESSIONS ═══ */}
+      <section className="py-20 lg:py-28 bg-ivory">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <AnimateOnScroll>
+              <p className="text-sage text-xs tracking-[0.25em] uppercase font-semibold mb-4 font-[family-name:var(--font-accent)] text-base">
+                Real Results
+              </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={100}>
+              <h2 className="font-[family-name:var(--font-heading)] text-charcoal text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+                How Different Hair Textures{" "}
+                <span className="text-navy">Progress Over Time</span>
+              </h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={200}>
+              <p className="text-charcoal/60 text-lg leading-relaxed max-w-2xl mx-auto">
+                Every texture locs differently. Here are real client journeys showing how different hair types transform from installation through 1+ years of maturation.
+              </p>
+            </AnimateOnScroll>
+          </div>
+
+          {/* Client Timeline: Cynthia */}
+          <AnimateOnScroll delay={100}>
+            <div className="mb-16">
+              <h3 className="font-[family-name:var(--font-heading)] text-charcoal text-xl font-bold mb-2">Cynthia</h3>
+              <p className="text-charcoal/50 text-sm mb-6">Softer texture all over &mdash; Microlocs with Interlock Maintenance</p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
+                {[
+                  { src: "/images/textures/cynthia-before-install.jpg", label: "Before Install", alt: "Cynthia — softer texture before microloc installation" },
+                  { src: "/images/textures/cynthia-interlock-maintenance.jpg", label: "Interlock Maintenance", alt: "Cynthia — after interlock maintenance session" },
+                  { src: "/images/textures/cynthia-1yr-later.jpg", label: "1+ Year Later", alt: "Cynthia — softer texture microlocs after 1+ year of maturation" },
+                ].map((img) => (
+                  <div key={img.src} className="relative">
+                    <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-md">
+                      <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 640px) 100vw, 33vw" />
+                    </div>
+                    <p className="text-center text-charcoal/60 text-xs font-semibold tracking-wide uppercase mt-3">{img.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </AnimateOnScroll>
+
+          {/* Client Timeline: Jasmine */}
+          <AnimateOnScroll delay={150}>
+            <div className="mb-16">
+              <h3 className="font-[family-name:var(--font-heading)] text-charcoal text-xl font-bold mb-2">Jasmine</h3>
+              <p className="text-charcoal/50 text-sm mb-6">Tighter curl pattern + high density hair &mdash; Microlocs (Interlocking Method)</p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
+                {[
+                  { src: "/images/textures/jasmine-before.jpg", label: "Before Install", alt: "Jasmine — tighter curl pattern and high density hair before microlocs" },
+                  { src: "/images/textures/jasmine-microlocs-interlock.jpg", label: "Microlocs Installed", alt: "Jasmine — microlocs installed using interlocking method" },
+                  { src: "/images/textures/jasmine-1yr-later.jpg", label: "1+ Year Later", alt: "Jasmine — tighter curl pattern microlocs after 1+ year" },
+                ].map((img) => (
+                  <div key={img.src} className="relative">
+                    <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-md">
+                      <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 640px) 100vw, 33vw" />
+                    </div>
+                    <p className="text-center text-charcoal/60 text-xs font-semibold tracking-wide uppercase mt-3">{img.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </AnimateOnScroll>
+
+          {/* Client Timeline: Tia */}
+          <AnimateOnScroll delay={200}>
+            <div className="mb-16">
+              <h3 className="font-[family-name:var(--font-heading)] text-charcoal text-xl font-bold mb-2">Tia</h3>
+              <p className="text-charcoal/50 text-sm mb-6">Tighter curl pattern, high density &mdash; Sisterlocks™ (Interlock Method Only)</p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
+                {[
+                  { src: "/images/textures/tia-before-sisterlocks.jpg", label: "Before Install", alt: "Tia — tighter curl pattern before Sisterlocks™ installation" },
+                  { src: "/images/textures/tia-during-sisterlocks.jpg", label: "During Install", alt: "Tia — during Sisterlocks™ installation using interlock method" },
+                  { src: "/images/textures/tia-1yr-later.jpg", label: "1+ Year Later", alt: "Tia — Sisterlocks™ after 1+ year of beautiful maturation" },
+                ].map((img) => (
+                  <div key={img.src} className="relative">
+                    <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-md">
+                      <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 640px) 100vw, 33vw" />
+                    </div>
+                    <p className="text-center text-charcoal/60 text-xs font-semibold tracking-wide uppercase mt-3">{img.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </AnimateOnScroll>
+
+          {/* Robin Before/After */}
+          <AnimateOnScroll delay={250}>
+            <div className="mb-16">
+              <h3 className="font-[family-name:var(--font-heading)] text-charcoal text-xl font-bold mb-2">Robin</h3>
+              <p className="text-charcoal/50 text-sm mb-6">Microlocs &mdash; Interlock Method</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 max-w-2xl mx-auto">
+                {[
+                  { src: "/images/textures/robin-before-install.jpg", label: "Before Install", alt: "Robin — before microlocs installation" },
+                  { src: "/images/textures/robin-after-install.jpg", label: "After Install", alt: "Robin — after microlocs installation using interlock method" },
+                ].map((img) => (
+                  <div key={img.src} className="relative">
+                    <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-md">
+                      <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 640px) 100vw, 50vw" />
+                    </div>
+                    <p className="text-center text-charcoal/60 text-xs font-semibold tracking-wide uppercase mt-3">{img.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </AnimateOnScroll>
+
+          {/* Additional Texture Progressions */}
+          <AnimateOnScroll delay={300}>
+            <div>
+              <h3 className="font-[family-name:var(--font-heading)] text-charcoal text-xl font-bold mb-6 text-center">More Texture Progressions</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 max-w-2xl mx-auto">
+                {[
+                  { src: "/images/textures/texture-progression-01.jpg", alt: "Loc texture progression — showing how locs develop and mature over time" },
+                  { src: "/images/textures/texture-progression-02.jpg", alt: "Loc texture progression — different hair types at various maturation stages" },
+                ].map((img) => (
+                  <div key={img.src} className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-md">
+                    <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 640px) 100vw, 50vw" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </AnimateOnScroll>
         </div>
       </section>
 

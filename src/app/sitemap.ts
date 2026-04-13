@@ -7,7 +7,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/install-requirements",
     "/loc-coloring",
-    "/loc-install-process",
     "/loc-installation",
     "/loc-repair",
     "/loc-retie",
@@ -18,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/pricing",
     "/privacy-policy",
     "/reviews",
+    "/services",
     "/transfer-clients",
   ].map((route) => ({
     url: `${baseUrl}${route}`,

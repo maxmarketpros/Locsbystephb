@@ -18,11 +18,17 @@ export const metadata: Metadata = {
   ],
 };
 
+// Ordered to match original Beacons site — chronological loc progression
 const galleryImages = [
-  ...Array.from({ length: 9 }).map((_, i) => ({
-    src: `/images/my-loc-journey/img${i + 1}.webp`,
-    alt: `Loc journey milestone photo ${i + 1}`,
-  })),
+  { src: "/images/my-loc-journey/img9.webp", alt: "Natural afro texture before locs — the very beginning of the journey" },
+  { src: "/images/my-loc-journey/img6.webp", alt: "Bantu knots and grid pattern — installation day preparation" },
+  { src: "/images/my-loc-journey/img3.webp", alt: "Short TWA in the early days — embracing the big chop" },
+  { src: "/images/my-loc-journey/img2.webp", alt: "Excited selfie with short curly starter locs — the joy of beginning" },
+  { src: "/images/my-loc-journey/img1.webp", alt: "Back of head showing budding locs — the teenage phase" },
+  { src: "/images/my-loc-journey/img5.webp", alt: "Short curly locs outdoors — growing into the journey" },
+  { src: "/images/my-loc-journey/img4.webp", alt: "Long flowing mature locs with honey-brown tones — full maturation" },
+  { src: "/images/my-loc-journey/img8.webp", alt: "Mature dark locs styled confidently — owning the crown" },
+  { src: "/images/my-loc-journey/img7.webp", alt: "Beautiful blonde-golden colored locs — the latest evolution" },
 ];
 
 export default function MyLocJourneyPage() {
@@ -127,7 +133,7 @@ export default function MyLocJourneyPage() {
               </p>
 
               <p>
-                At the time, my mother had been locked for over two decades, and my roommate wore Sisterlocks—both women deeply rooted in their choice and visibly freer because of it. I admired that freedom, but I was also hesitant. I worried about versatility. I worried about permanence. Most of all, I worried about losing control. Still, I knew something had to change. I wanted to work out without hesitation, swim without calculation, and move through life without constantly negotiating with my hair.
+                At the time, my mother had been locked for over two decades, and my roommate wore Sisterlocks™—both women deeply rooted in their choice and visibly freer because of it. I admired that freedom, but I was also hesitant. I worried about versatility. I worried about permanence. Most of all, I worried about losing control. Still, I knew something had to change. I wanted to work out without hesitation, swim without calculation, and move through life without constantly negotiating with my hair.
               </p>
             </div>
           </AnimateOnScroll>

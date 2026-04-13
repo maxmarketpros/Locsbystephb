@@ -1,18 +1,8 @@
 import Image from "next/image";
-import { CLIENT_IMAGES } from "@/data/siteContent";
+import { GALLERY_IMAGES } from "@/data/siteContent";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 export default function GalleryTeaser() {
-  // Select diverse images for the gallery
-  const galleryImages = [
-    CLIENT_IMAGES[0],
-    CLIENT_IMAGES[2],
-    CLIENT_IMAGES[5],
-    CLIENT_IMAGES[7],
-    CLIENT_IMAGES[9],
-    CLIENT_IMAGES[11],
-  ];
-
   return (
     <section className="py-24 lg:py-32 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -37,9 +27,9 @@ export default function GalleryTeaser() {
           </AnimateOnScroll>
         </div>
 
-        {/* Masonry-style Grid */}
+        {/* Masonry-style Grid — first 6 prominent, remaining in tighter grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
-          {galleryImages.map((image, i) => (
+          {GALLERY_IMAGES.slice(0, 6).map((image, i) => (
             <AnimateOnScroll
               key={image.src}
               delay={i * 80}
@@ -64,6 +54,26 @@ export default function GalleryTeaser() {
             </AnimateOnScroll>
           ))}
         </div>
+
+        {/* Additional results — compact grid */}
+        {GALLERY_IMAGES.length > 6 && (
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-3 mt-6">
+            {GALLERY_IMAGES.slice(6).map((image, i) => (
+              <AnimateOnScroll key={image.src} delay={500 + i * 60}>
+                <div className="group relative aspect-square rounded-xl lg:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    sizes="(max-width: 768px) 33vw, 16vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+              </AnimateOnScroll>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

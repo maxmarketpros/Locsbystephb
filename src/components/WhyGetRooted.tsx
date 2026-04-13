@@ -70,6 +70,21 @@ export default function WhyGetRooted() {
                 </AnimateOnScroll>
               ))}
             </div>
+
+            {/* Client Quote — Time Savings */}
+            <AnimateOnScroll delay={600}>
+              <div className="mt-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 lg:p-8">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 text-sage-light text-3xl font-[family-name:var(--font-heading)]">&ldquo;</div>
+                  <div>
+                    <p className="text-ivory/80 text-sm lg:text-base leading-relaxed italic mb-3">
+                      My morning routine went from 45+ minutes of detangling, washing, drying, and styling to just 5&ndash;10 minutes. I got my mornings back.
+                    </p>
+                    <p className="text-sage-light/60 text-xs tracking-wider uppercase">Client Testimonial</p>
+                  </div>
+                </div>
+              </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </div>
