@@ -5,7 +5,7 @@ export const SITE = {
   name: "Locs By Steph B",
   phone: "(202) 744-8419",
   phoneHref: "tel:+12027448419",
-  bookingUrl: "https://locsbystephb.glossgenius.com/services",
+  bookingUrl: "https://locsbystephbnoho.glossgenius.com/services",
   email: "",
   tagline: "Rooted in Care. Elevated by Craft.",
   description:
